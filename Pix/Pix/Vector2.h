@@ -15,13 +15,13 @@ struct Vector2 // Vector for the x and y axis'
 												  // i.e; Vector2 a(Vector2(10.0f, 4.0f)); = (10, 4)
 
 
-	Vector2 operator - () { return Vector2(-x, -y); }
+	Vector2 operator - () const { return Vector2(-x, -y); }
 
-	Vector2 operator + (const Vector2& rhs) { return Vector2(x + rhs.x, y + rhs.y); }
-	Vector2 operator - (const Vector2& rhs) { return Vector2(x - rhs.x, y - rhs.y); }
+	Vector2 operator + (const Vector2& rhs) const { return Vector2(x + rhs.x, y + rhs.y); }
+	Vector2 operator - (const Vector2& rhs) const { return Vector2(x - rhs.x, y - rhs.y); }
 
-	Vector2 operator * (float s) { return Vector2(x * s, y * s); }
-	Vector2 operator / (float s) { return Vector2(x / s, y / s); }
+	Vector2 operator * (float s) const { return Vector2(x * s, y * s); }
+	Vector2 operator / (float s) const { return Vector2(x / s, y / s); }
 	
 	Vector2& operator += (const Vector2& rhs) { x += rhs.x; y += rhs.y; return *this; }
 	Vector2& operator -= (const Vector2& rhs) { x -= rhs.x; y -= rhs.y; return *this; }
