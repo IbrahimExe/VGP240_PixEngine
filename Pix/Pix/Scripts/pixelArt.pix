@@ -180,7 +180,6 @@ DrawPixel(3, 20)
 DrawPixel(2, 20)
 DrawPixel(3, 21)
 
-
 // Darker Blue
 SetColor(0.0, 0.3411764705882353, 0.5490196078431373)
 DrawPixel(0, 12)
