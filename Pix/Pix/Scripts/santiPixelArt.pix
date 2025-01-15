@@ -1,5 +1,5 @@
 //Game character - Santi
-SetResolution(23, 18, 25, true)
+SetResolution(23, 18, 25)
 
 SetColor(0., 0.55, 0.7)//skyblue
 
@@ -252,3 +252,4 @@ SetColor(0.7, 0.5, 0.0)// eyes brown
 DrawPixel(20, 5)
 DrawPixel(15, 7)
 DrawPixel(15, 8)
+
