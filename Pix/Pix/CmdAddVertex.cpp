@@ -4,7 +4,7 @@
 bool CmdAddVertex::Execute(const std::vector<std::string>& params)
 {
 	float x, y, z = 0.0f;
-	float r, g, b = 0.0f;
+	float r, g, b = 1.0f;
 
 	if (params.size() == 2) {
 		x = stof(params[0]);

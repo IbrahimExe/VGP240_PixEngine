@@ -25,7 +25,11 @@ public:
 
 	void DrawLine(const Vertex& a, const Vertex& b);
 
+	void DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c);
+
 private:
+	void DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vertex& c);
+	
 	X::Color mColor = X::Colors::White;
 
 	FillMode mFillMode = FillMode::Solid;

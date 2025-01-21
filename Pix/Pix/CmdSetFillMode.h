@@ -2,20 +2,20 @@
 
 #include "Command.h"
 
-class CmdEndDraw : public Command
+class CmdSetFillMode : public Command
 {
 public:
-
 	const char* GetName() override
 	{
-		return "EndDraw";
+		return "SetFillMode";
 	}
 
 	const char* GetDescription() override
 	{
-		return "EndDraw()\n"
+		return
+			"SetFillMode(fillMode)\n"
 			"\n"
-			"- Sends vertices to rasteriser to render.";
+			"- Sets the fill mode <wireframe>, <solid>";
 	}
 
 	bool Execute(const std::vector<std::string>& params) override;
