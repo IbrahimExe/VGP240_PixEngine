@@ -1,7 +1,6 @@
-SetResolution(50,50,10,true)
+SetResolution(50,50,20,true)
 
 SetFillMode(solid)
-
 BeginDraw(triangle)
 
 Vertex(2,2,1,1,0)
