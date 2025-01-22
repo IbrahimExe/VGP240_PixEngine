@@ -53,9 +53,9 @@ bool PrimativesManager::EndDraw()
 		break;
 	case Topology::Triangle:
 	{
-		for (size_t i = 2; i < mVertexBuffer.size(); i += 3)
+		for (size_t i = 2; i < mVertexBuffer.size(); i += 2)
 		{
-			Rasterizer::Get()->DrawTriangle(mVertexBuffer[i - 2], mVertexBuffer[i-1], mVertexBuffer[i]);
+			Rasterizer::Get()->DrawLine(mVertexBuffer[i - 1], mVertexBuffer[i]);
 		}
 	}
 		break;
