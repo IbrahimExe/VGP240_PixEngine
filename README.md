@@ -1,5 +1,5 @@
 # VGP240_PixEngine
-Understanding game engines by creating my own using Pix.
+Understanding Game Engines & their Visualisation Logic by creating my own using Pix.
 
 ## Week 1 - Intro to Pix Engine and Simple Point & Colour functions
 
@@ -11,3 +11,13 @@ Understanding game engines by creating my own using Pix.
 
 ![Week_2_Line](https://github.com/user-attachments/assets/f38b19c6-0511-4e80-aba4-a655908d00f4)
 - Visualisation of a Line with Colour Gradients, including Colour and Vertex Mathematics/ Logic.
+
+![Week_2_Triangles](https://github.com/user-attachments/assets/62dcb641-c91c-4a9a-a74b-74f15cf14db9)
+- As well as Triangle Visualisation With Wireframe & Fill Mode Logic and Colour Mathematics.
+
+
+## Week 3 - Viewport & Clipping
+
+![Clipping](https://github.com/user-attachments/assets/048c3046-95e1-4cec-af44-a008aa2ae942)
+- Created a Viewport, allowing us to allow for CLipping Logic.
+- Implemented Clipping (Responsible for testing primitive visibility against the viewport boundaries). 
