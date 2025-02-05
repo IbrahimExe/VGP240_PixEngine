@@ -19,5 +19,9 @@ Understanding Game Engines & their Visualisation Logic by creating my own using 
 ## Week 3 - Viewport & Clipping
 
 ![Clipping](https://github.com/user-attachments/assets/048c3046-95e1-4cec-af44-a008aa2ae942)
-- Created a Viewport, allowing us to allow for CLipping Logic.
-- Implemented Clipping (Responsible for testing primitive visibility against the viewport boundaries). 
+- Created a Viewport, allowing us to allow for Clipping Logic.
+- Implemented Clipping (Responsible for testing primitive visibility against the viewport boundaries).
+
+## Week 4 - 4x4 Vector Math & Logic Implementation
+- Implemented Matrix Operations, such as Determinants, Inverse, Cofactor and Dot Product.
+- Allowing for Perspective Projections and eventually a Camera System!  
