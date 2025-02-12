@@ -35,4 +35,4 @@ Understanding Game Engines & their Visualisation Logic by creating my own using 
 
 ![Week_6_Showcase](https://github.com/user-attachments/assets/bc8806a2-ea56-4876-8d1e-ae6dbfc6fd4b)
 - Created a Culling System; An Optimization to the Rendering Pipeline that works by Avoiding Drawing Geometry that is not Visible to the Camera, done through Normal and Cross Product Calculations.
-- Added a UI Elements as well, to allow for the Culling Updates to be Shown Without Needing to Restart the Program.
+- Added a UI Element as well, to allow for the Culling Updates to be Shown Without Needing to Restart the Program.
