@@ -153,6 +153,9 @@
     <ClCompile Include="CmdEnableDepth.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="CmdVarBool.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
@@ -255,6 +258,9 @@
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="CmdEnableDepth.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdVarBool.h">
       <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>

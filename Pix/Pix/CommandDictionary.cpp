@@ -19,6 +19,7 @@
 
 #include "CmdSetCullMode.h"
 #include "CmdEnableDepth.h"
+#include "CmdVarBool.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -35,6 +36,7 @@ CommandDictionary::CommandDictionary()
 
 	// Variable Commands
 	RegisterCommand<CmdVarFloat>();
+	RegisterCommand<CmdVarBool>();
 
 	// Rasterization Commands
 	RegisterCommand<CmdDrawPixel>();
