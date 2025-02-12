@@ -25,3 +25,8 @@ Understanding Game Engines & their Visualisation Logic by creating my own using 
 ## Week 4 - 4x4 Vector Math & Logic Implementation
 - Implemented Matrix Operations, such as Determinants, Inverse, Cofactor and Dot Product.
 - Allowing for Perspective Projections and eventually a Camera System!  
+
+## Week 5 - Camera System!
+
+![Week_5_Showcase](https://github.com/user-attachments/assets/134290f1-6a34-4632-954d-ee16183446c1)
+- Created a Camera thats able to Handle & Render 3D Shapes!
