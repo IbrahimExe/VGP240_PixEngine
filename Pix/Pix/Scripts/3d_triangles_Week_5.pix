@@ -3,7 +3,7 @@ SetResolution(500, 500, 1)
 SetViewport(50, 50, 400, 400)
 SetClipping(true)
 SetCullMode(back)
-//EnableDepth(true)
+EnableDepth(true)
 ShowViewport(true)
 
 float $camX = 0, 0.01
@@ -38,5 +38,8 @@ Vertex(0, 2, 0, 1, 1, 0)
 Vertex(1.3, -2, 0, 1, 1, 0)
 
 EndDraw()
+
+
+
 
 

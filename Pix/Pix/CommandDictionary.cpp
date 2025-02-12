@@ -18,6 +18,7 @@
 #include "CmdCamera.h"
 
 #include "CmdSetCullMode.h"
+#include "CmdEnableDepth.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -39,6 +40,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdDrawPixel>();
 	RegisterCommand<CmdSetColor>();
 	RegisterCommand<CmdSetFillMode>();
+	RegisterCommand<CmdEnableDepth>();
 
 	// Primatives Commands
 	RegisterCommand<CmdBeginDraw>();
