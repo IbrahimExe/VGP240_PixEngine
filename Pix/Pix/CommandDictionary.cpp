@@ -17,6 +17,8 @@
 #include "CmdMatrix.h"
 #include "CmdCamera.h"
 
+#include "CmdSetCullMode.h"
+
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -42,6 +44,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdAddVertex>();
+	RegisterCommand<CmdSetCullMode>(); // Culling Command
 
 	// Viewport Commands
 	RegisterCommand<CmdSetViewport>();

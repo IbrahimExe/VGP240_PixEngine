@@ -23,6 +23,30 @@ namespace
 			 hw ,  hh , 0.0f, 1.0f
 		);
 	}
+
+	bool CullTriangle(CullMode mode, const std::vector<Vertex>& triangleInNDC)
+	{
+		if (mode == CullMode::None)
+		{
+			return false;
+		}
+
+		Vector3 abDir = triangleInNDC[1].pos - triangleInNDC[0].pos;
+        Vector3 acDir = triangleInNDC[2].pos - triangleInNDC[0].pos;
+        Vector3 faceNormNDC = MathHelper::Normalize(MathHelper::Cross(abDir, acDir));
+
+		if (mode == CullMode::Back)
+		{
+			return faceNormNDC.z > 0.0f;
+		}
+
+	    if (mode == CullMode::Front)
+		{
+			return faceNormNDC.z < 0.0f;
+		}
+
+		return false;
+	}
 }
 
 PrimativesManager* PrimativesManager::Get()
@@ -34,6 +58,16 @@ PrimativesManager* PrimativesManager::Get()
 PrimativesManager::PrimativesManager()
 {
 
+}
+
+void PrimativesManager::OnNewFrame()
+{
+	mCullMode = CullMode::Back;
+}
+
+void PrimativesManager::SetCullMode(CullMode mode)
+{
+	mCullMode = mode;
 }
 
 bool PrimativesManager::BeginDraw(Topology topology, bool applyTransform)
@@ -102,6 +136,11 @@ bool PrimativesManager::EndDraw()
 		for (size_t i = 2; i < mVertexBuffer.size(); i += 3)
 		{
 			std::vector<Vertex> triangle = { mVertexBuffer[i - 2], mVertexBuffer[i - 1], mVertexBuffer[i] };
+
+			if (CullTriangle(mCullMode, triangle))
+			{
+				continue; // Restarts the loop from the start.
+			}
 
 			if (!Clipper::Get()->ClipTriangle(triangle))
 			{

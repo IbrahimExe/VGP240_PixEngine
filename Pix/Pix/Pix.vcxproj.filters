@@ -144,6 +144,9 @@
     <ClCompile Include="CmdCamera.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="CmdSetCullMode.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
@@ -237,6 +240,9 @@
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="CmdCamera.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdSetCullMode.h">
       <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>
