@@ -30,3 +30,9 @@ Understanding Game Engines & their Visualisation Logic by creating my own using 
 
 ![Week_5_Showcase](https://github.com/user-attachments/assets/134290f1-6a34-4632-954d-ee16183446c1)
 - Created a Camera thats able to Handle & Render 3D Shapes!
+
+## Week 6 - Culling!
+
+![Week_6_Showcase](https://github.com/user-attachments/assets/bc8806a2-ea56-4876-8d1e-ae6dbfc6fd4b)
+- Created a Culling System; An Optimization to the Rendering Pipeline that works by Avoiding Drawing Geometry that is not Visible to the Camera, done through Normal and Cross Product Calculations.
+- Added a UI Elements as well, to allow for the Culling Updates to be Shown Without Needing to Restart the Program.
