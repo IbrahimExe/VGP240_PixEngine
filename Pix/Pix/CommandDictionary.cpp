@@ -21,6 +21,8 @@
 #include "CmdEnableDepth.h"
 #include "CmdVarBool.h"
 
+#include "CmdMaterial.h"
+
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -69,6 +71,13 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraNear>();
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFov>();
+
+	// Material Commands
+	RegisterCommand<CmdSetMaterialEmissive>();
+	RegisterCommand<CmdSetMaterialAmbient>();
+	RegisterCommand<CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialSpecular>();
+	RegisterCommand<CmdSetMaterialShininess>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
