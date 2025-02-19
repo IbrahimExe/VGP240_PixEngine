@@ -7,6 +7,7 @@
 #include "PrimativesManager.h"
 #include "DepthBuffer.h"
 #include "MaterialManager.h"
+#include "LightManager.h"
 
 void Graphics::NewFrame()
 {
@@ -17,4 +18,5 @@ void Graphics::NewFrame()
 	PrimativesManager::Get()->OnNewFrame();
 	DepthBuffer::Get()->OnNewFrame();
 	MaterialManager::Get()->OnNewFrame();
+	LightManager::Get()->OnNewFrame();
 }
