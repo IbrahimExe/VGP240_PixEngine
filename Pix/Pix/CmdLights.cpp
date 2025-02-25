@@ -85,8 +85,19 @@ bool CmdAddPointLight::Execute(const std::vector<std::string>& params)
     float linear = 0.0f;
     float quadratic = 0.0f;
 
-    if (params.size() >= 4)
+    if (params.size() > 3)
     {
         constant = vc->GetFloat(params[3]);
     }
+    if (params.size() > 4)
+    {
+        linear = vc->GetFloat(params[4]);
+    }
+    if (params.size() > 5)
+    {
+        quadratic = vc->GetFloat(params[5]);
+    }
+
+    LightManager::Get()->AddPointLight({ x, y, z }, constant, linear, quadratic);
+    return true;
 }

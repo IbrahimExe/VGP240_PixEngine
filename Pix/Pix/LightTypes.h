@@ -24,7 +24,7 @@ public:
 
 private:
     Vector3 mPosition;
-    float mAttenConst = 1.0f;
-    float mAttenLinear = 0.09f;
-    float mAttenQuadratic = 0.032f;
-};;
+    float mAttenConst = -1.0f;
+    float mAttenLinear = 0.0f;
+    float mAttenQuadratic = 0.0f;
+};
