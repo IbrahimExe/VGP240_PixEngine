@@ -77,4 +77,3 @@ X::Color LightManager::ComputeLightColor(const Vector3& position, const Vector3&
 
     return color;
 }
-

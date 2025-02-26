@@ -43,6 +43,16 @@ void Rasterizer::SetFillMode(FillMode fillMode)
 	mFillMode = fillMode;
 }
 
+void Rasterizer::SetShadeMode(ShadeMode shadeMode)
+{
+    mShadeMode = shadeMode;
+}
+
+ShadeMode Rasterizer::GetShadeMode()
+{
+    return mShadeMode;
+}
+
 void Rasterizer::DrawPoint(int x, int y)
 {
 	X::DrawPixel(x, y, mColor);

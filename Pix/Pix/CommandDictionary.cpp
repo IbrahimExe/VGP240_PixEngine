@@ -23,6 +23,8 @@
 
 #include "CmdMaterial.h"
 #include "CmdLights.h"
+#include "CmdModel.h"
+#include "CmdSetShadeMode.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -46,12 +48,14 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetColor>();
 	RegisterCommand<CmdSetFillMode>();
 	RegisterCommand<CmdEnableDepth>();
+	RegisterCommand<CmdSetShadeMode>();
 
 	// Primatives Commands
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdAddVertex>();
 	RegisterCommand<CmdSetCullMode>(); // Culling Command
+	RegisterCommand<CmdModel>(); // Model Command
 
 	// Viewport Commands
 	RegisterCommand<CmdSetViewport>();
