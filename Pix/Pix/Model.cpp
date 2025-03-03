@@ -5,7 +5,7 @@ void Model::Load(const std::string& fileName)
     mFileName = fileName;
 
     std::vector<Vector3> positions;
-    std::vector<Vector3> nomals;
+    std::vector<Vector3> normals;
     std::vector<uint32_t> positionIndices;
 
     FILE* file = nullptr;
@@ -47,12 +47,6 @@ void Model::Load(const std::string& fileName)
                 positionIndices.push_back(v[i]);
             }
         }
-        else if (strcmp(buffer, "vn") == 0)
-        {
-            float x, y, z = 0.0f;
-            fscanf_s(file, "%f %f %f\n", &x, &y, &z);
-            nomals.push_back(MathHelper::Normalize({ x, y, z }));
-        }
     }
     fclose(file);
 
@@ -88,13 +82,21 @@ void Model::Load(const std::string& fileName)
 
         for (size_t i = 0; i < normals.size(); i++)
         {
-            normals[i] = MathHelper::Normalize(normals[i] / static_cast<float>(normalsCount[i]));
+            if (normalsCount[i] > 0)
+            {
+                normals[i] = MathHelper::Normalize(normals[i] / static_cast<float>(normalsCount[i]));
+            }
+            else
+            {
+                normals[i] = { 0.0f, 1.0f, 0.0f };
+            }
         }
     }
 
     for (size_t i = 0; i < positionIndices.size(); i++)
     {
         mVertices[i].pos = positions[positionIndices[i] - 1];
+        mVertices[i].norm = normals[positionIndices[i] - 1];
         mVertices[i].color = X::Colors::White;
     }
 }

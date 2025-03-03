@@ -12,7 +12,7 @@ public:
 
     const char* GetDescription() override
     {
-        return "Model(fileName)"
+        return "Model (fileName)"
             "\n"
             "- Loads a model into memory and adds vertices to primatives manager.";
     }

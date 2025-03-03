@@ -150,21 +150,29 @@ bool PrimativesManager::EndDraw()
 				if (MathHelper::IsEqual(MathHelper::MagnitudeSquared(triangle[0].norm), 0.0f))
 				{
 					Vector3 faceNormal = CreateFaceNormal(triangle);
-					for (size_t = 0; t < triangle.size(); ++t)
+					for (size_t t = 0; t < triangle.size(); ++t)
                     {
                         triangle[t].norm = faceNormal;
                     }
 				}
+				// If we DO have one, Transform into World Space
+				else
+				{
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						triangle[t].norm = MathHelper::TransformNormal(triangle[t].norm, matWorld);
+					}
+				}
 
 				// Apply Light to Vertices (Lighting needs to be calculated in World Space):
 				Vector3 faceNormal = CreateFaceNormal(triangle);
-				if (shadeMode = ShadeMode::Flat)
+				if (shadeMode == ShadeMode::Flat)
 				{
 					triangle[0].color *= LightManager::Get()->ComputeLightColor(triangle[0].pos, triangle[0].norm);
 					triangle[1].color = triangle[0].color;
 					triangle[2].color = triangle[0].color;
 				}
-				else if (shadeMode = ShadeMode::Gouraud)
+				else if (shadeMode == ShadeMode::Gouraud)
 				{
 					for (size_t t = 0; t < triangle.size(); ++t)
 					{

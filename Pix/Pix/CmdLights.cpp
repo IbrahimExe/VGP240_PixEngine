@@ -113,6 +113,7 @@ bool CmdAddSpotLight::Execute(const std::vector<std::string>& params)
     const float posX = vc->GetFloat(params[0]);
     const float posY = vc->GetFloat(params[1]);
     const float posZ = vc->GetFloat(params[2]);
+
     const float dirX = vc->GetFloat(params[3]);
     const float dirY = vc->GetFloat(params[4]);
     const float dirZ = vc->GetFloat(params[5]);
