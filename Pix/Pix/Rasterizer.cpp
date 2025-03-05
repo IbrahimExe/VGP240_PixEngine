@@ -1,6 +1,7 @@
 #include "Rasterizer.h"
 #include "DepthBuffer.h"
 #include "LightManager.h"
+#include "TextureManager.h"
 
 void DrawLineLow(const Vertex& left, const Vertex& right, ShadeMode shadeMode)
 {
@@ -66,7 +67,8 @@ void Rasterizer::DrawPoint(const Vertex& vertex)
 
 	if (DepthBuffer::Get()->CheckDepthBuffer(x, y, vertex.pos.z))
 	{
-		X::Color color = vertex.color;
+		X::Color color = TextureManager::Get()->SampleColor(vertex.color);
+
 		if (mShadeMode == ShadeMode::Phong)
 		{
 			color *= LightManager::Get()->ComputeLightColor(vertex.posWorld, vertex.norm);
