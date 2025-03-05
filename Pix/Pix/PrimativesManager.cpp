@@ -165,7 +165,7 @@ bool PrimativesManager::EndDraw()
 				}
 
 				// If color are UV's (z < o.0f) do not apply flat or gouraud light mode shading.
-				// 
+				// Color is not a valid color, but a UV coordinate.
 				if (triangle[0].color.z >= 0.0f)
 				{
 					// Apply Light to Vertices (Lighting needs to be calculated in World Space):
