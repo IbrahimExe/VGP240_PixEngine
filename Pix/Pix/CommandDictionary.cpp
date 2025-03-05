@@ -29,6 +29,7 @@
 #include "CmdSetTexture.h"
 #include "CmdSetCorrectUV.h"
 #include "CmdSetUseFilter.h"
+#include "SetAddressMode.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -63,6 +64,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetTexture>(); // Texture Command
 	RegisterCommand<CmdSetCorrectUV>(); // Correct UV Command
 	RegisterCommand<CmdSetUseFilter>(); // Use Bilinear Filter Command
+	RegisterCommand<CmdSetAddressMode>(); // Address Mode Command
 
 	// Viewport Commands
 	RegisterCommand<CmdSetViewport>();

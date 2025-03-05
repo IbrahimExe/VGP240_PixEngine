@@ -13,6 +13,8 @@ public:
 
     void SetUseFilter(bool useFilter);
 
+    void SetAddressMode(AddressMode addressMode);
+
     X::Color SampleColor(const X::Color& uv) const;
 
 private:
@@ -20,4 +22,5 @@ private:
     const Texture* mCurrentTexture = nullptr;
 
     bool mUseFilter = true;
+    AddressMode mAddressMode = AddressMode::Clamp;
 };
