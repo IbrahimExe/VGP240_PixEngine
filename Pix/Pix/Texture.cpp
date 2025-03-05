@@ -37,6 +37,35 @@ namespace
         return newStride;
     }
 #pragma pack(pop)
+
+    X::Color GetBilinearFilterPixelColor(const Texture& tex, float u, float v)
+    {
+        // Step 1. Convert UV Coordinates to Texel Coordinates:
+        float uTex = u * static_cast<float>(tex.GetWidth());
+        float vTex = v * static_cast<float>(tex.GetHeight());
+
+        // Step 2. Convert the floats to ints to get the pixel indices:
+        int uTexInt = static_cast<int>(uTex);
+        int vTexInt = static_cast<int>(vTex);
+
+        // Step 3. Get the float remainder as a ratio:
+        float uRatio = uTex - static_cast<float>(uTexInt);
+        float vRatio = vTex - static_cast<float>(vTexInt);
+
+        // Step 4. Get the opposite ratios:
+        float uOpposite = 1.0f - uRatio;
+        float vOpposite = 1.0f - vRatio;
+
+        // Step 5. Get all neighboring pixel colors:
+        X::Color a = tex.GetPixel(uTexInt, vTexInt) * uOpposite;
+        X::Color b = tex.GetPixel(uTexInt + 1, vTexInt) * uRatio;
+        X::Color c = tex.GetPixel(uTexInt, vTexInt + 1) * uOpposite;
+        X::Color d = tex.GetPixel(uTexInt + 1, vTexInt + 1) * uRatio;
+
+        // Step 6. Calculate the final color:
+        return (a + b) * vOpposite 
+             + (c + d) * vRatio;
+    }
 }
 
 void Texture::Load(const std::string& fileName)
@@ -85,7 +114,7 @@ void Texture::Load(const std::string& fileName)
             fread(&g, sizeof(uint8_t), 1, file);
             fread(&r, sizeof(uint8_t), 1, file);
 
-            uint32_t index = ((mHeight - h - 1) * mWidth);
+            uint32_t index = w + ((mHeight - h - 1) * mWidth);
             mPixels[index] = { r / 255.0f, g / 255.0f, b / 255.0f, 1.0f };
         }
         fread((char*)paddedBytes.data(), paddedBytes.size(), 1, file);
@@ -108,8 +137,13 @@ int Texture::GetHeight() const
     return mHeight;
 }
 
-X::Color Texture::GetPixel(float u, float v) const
+X::Color Texture::GetPixel(float u, float v, bool filter) const
 {
+    if (filter)
+    {
+        return GetBilinearFilterPixelColor(*this, u, v);
+    }
+
     int uIndex = static_cast<int>(u * (mWidth - 1));
     int vIndex = static_cast<int>(v * (mHeight - 1));
 

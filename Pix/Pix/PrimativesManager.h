@@ -25,6 +25,8 @@ public:
 	void OnNewFrame();
 	void SetCullMode(CullMode mode);
 
+	void SetCorrectUV(bool correctUV);
+
 	bool BeginDraw(Topology topology, bool applyTransform = false);
 
 	void AddVertex(const Vertex& vertex); // So that a copy isnt made everytime (duplicates chopping memory)
@@ -43,4 +45,5 @@ private:
 
 	bool mDrawBegin = false; 
 	bool mApplyTransform = false;
+	bool mCorrectUV = false;
 };

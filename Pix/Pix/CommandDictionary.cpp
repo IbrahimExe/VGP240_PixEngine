@@ -26,6 +26,10 @@
 #include "CmdModel.h"
 #include "CmdSetShadeMode.h"
 
+#include "CmdSetTexture.h"
+#include "CmdSetCorrectUV.h"
+#include "CmdSetUseFilter.h"
+
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -56,6 +60,9 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdAddVertex>();
 	RegisterCommand<CmdSetCullMode>(); // Culling Command
 	RegisterCommand<CmdModel>(); // Model Command
+	RegisterCommand<CmdSetTexture>(); // Texture Command
+	RegisterCommand<CmdSetCorrectUV>(); // Correct UV Command
+	RegisterCommand<CmdSetUseFilter>(); // Use Bilinear Filter Command
 
 	// Viewport Commands
 	RegisterCommand<CmdSetViewport>();

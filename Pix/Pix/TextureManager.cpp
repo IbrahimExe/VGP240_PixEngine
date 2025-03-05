@@ -20,7 +20,7 @@ void TextureManager::SetTexture(const std::string& fileName)
             return texture->GetFileName() == fileName;
         });
 
-    if (iter == mTextures.end())
+    if (iter != mTextures.end())
     {
         mCurrentTexture = iter->get();
     }
@@ -32,16 +32,21 @@ void TextureManager::SetTexture(const std::string& fileName)
     }
 }
 
+void TextureManager::SetUseFilter(bool useFilter)
+{
+    mUseFilter = useFilter;
+}
+
 X::Color TextureManager::SampleColor(const X::Color& uv) const
 {
     X::Color color = uv;
 
     if (mCurrentTexture != nullptr && uv.z < 0.0f)
     {
-        float u = uv.x;
-        float v = uv.y;
+        float u = uv.x / uv.w;
+        float v = uv.y / uv.w;
 
-        color = mCurrentTexture->GetPixel(u, v);
+        color = mCurrentTexture->GetPixel(u, v, mUseFilter);
     }
     return color;
 }

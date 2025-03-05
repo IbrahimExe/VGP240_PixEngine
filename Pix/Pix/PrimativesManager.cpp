@@ -72,11 +72,17 @@ PrimativesManager::PrimativesManager()
 void PrimativesManager::OnNewFrame()
 {
 	mCullMode = CullMode::Back;
+	mCorrectUV = false;
 }
 
 void PrimativesManager::SetCullMode(CullMode mode)
 {
 	mCullMode = mode;
+}
+
+void PrimativesManager::SetCorrectUV(bool correctUV)
+{
+	mCorrectUV = correctUV;
 }
 
 bool PrimativesManager::BeginDraw(Topology topology, bool applyTransform)
@@ -182,6 +188,18 @@ bool PrimativesManager::EndDraw()
 						{
 							triangle[t].color *= LightManager::Get()->ComputeLightColor(triangle[t].pos, triangle[t].norm);
 						}
+					}
+				}
+
+				else if (mCorrectUV)
+				{
+					// Apply perspective correction to UV's in View Space:
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						Vector3 viewSpacePos = MathHelper::TransformCoord(triangle[t].posWorld, matView);
+						triangle[t].color.x /= viewSpacePos.z;
+						triangle[t].color.y /= viewSpacePos.z;
+						triangle[t].color.w = 1.0f / viewSpacePos.z;
 					}
 				}
 
