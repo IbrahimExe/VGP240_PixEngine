@@ -29,7 +29,7 @@
 #include "CmdSetTexture.h"
 #include "CmdSetCorrectUV.h"
 #include "CmdSetUseFilter.h"
-#include "SetAddressMode.h"
+#include "CmdSetAddressMode.h"
 
 CommandDictionary* CommandDictionary::Get()
 {

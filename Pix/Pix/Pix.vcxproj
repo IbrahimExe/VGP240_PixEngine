@@ -210,7 +210,7 @@
     <ClCompile Include="PrimativesManager.cpp" />
     <ClCompile Include="Rasterizer.cpp" />
     <ClCompile Include="ScriptParser.cpp" />
-    <ClCompile Include="SetAddressMode.cpp" />
+    <ClCompile Include="CmdSetAddressMode.cpp" />
     <ClCompile Include="TextEditor.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -266,7 +266,7 @@
     <ClInclude Include="PrimativesManager.h" />
     <ClInclude Include="Rasterizer.h" />
     <ClInclude Include="ScriptParser.h" />
-    <ClInclude Include="SetAddressMode.h" />
+    <ClInclude Include="CmdSetAddressMode.h" />
     <ClInclude Include="TextEditor.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureManager.h" />
