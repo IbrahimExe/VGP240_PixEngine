@@ -11,7 +11,7 @@ enum class Topology // 'class' -> Topology::Line
 
 enum class CullMode
 {
-	None,  // No culling
+	None,  // No Face Culling
 	Front, // Cull items facing towards the camera
 	Back   // Cull items facing away from the camera
 };

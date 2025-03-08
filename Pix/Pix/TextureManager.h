@@ -21,6 +21,6 @@ private:
     std::vector<std::unique_ptr<Texture>> mTextures;
     const Texture* mCurrentTexture = nullptr;
 
-    bool mUseFilter = true;
+    bool mUseFilter = false;
     AddressMode mAddressMode = AddressMode::Clamp;
 };

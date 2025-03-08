@@ -19,11 +19,11 @@ public:
     // u & v are in the range of [0, 1]
     X::Color GetPixel(float u, float v, bool filter, AddressMode addressMode) const;
 
-    int GetWidth() const;
-    int GetHeight() const;
-
     // Texel Coordinates
     X::Color GetPixel(int u, int v) const;
+
+    int GetWidth() const;
+    int GetHeight() const;
 
 private:
 

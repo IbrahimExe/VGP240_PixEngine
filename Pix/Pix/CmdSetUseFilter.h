@@ -14,7 +14,7 @@ public:
     {
         return "SetUseFilter(bool)"
             "\n"
-            "- Enables/ Disables the use of Bilinear filtering";
+            "- Enables/ Disables the use of Bilinear Filtering";
     }
 
     bool Execute(const std::vector<std::string>& params) override;

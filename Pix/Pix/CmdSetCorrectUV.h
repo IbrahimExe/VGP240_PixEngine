@@ -14,7 +14,7 @@ public:
     {
         return "SetCorrectUV(enable)"
             "\n"
-            "- Enables/ Disables the correct UV for a texture";
+            "- Enables/ Disables UV Perspective Correction.";
     }
 
     bool Execute(const std::vector<std::string>& params) override;

@@ -26,4 +26,7 @@ bool CmdSetAddressMode::Execute(const std::vector<std::string>& params)
     {
         addressMode = AddressMode::Mirror;
     }
+
+    TextureManager::Get()->SetAddressMode(addressMode);
+    return true;
 }

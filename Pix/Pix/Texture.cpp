@@ -148,6 +148,7 @@ X::Color Texture::GetPixel(float u, float v, bool filter, AddressMode addressMod
                 return X::Colors::HotPink;
             }
         }
+        break;
         case AddressMode::Clamp:
         {
             u = std::clamp(u, 0.0f, 1.0f);
