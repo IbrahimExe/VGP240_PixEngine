@@ -36,3 +36,17 @@ Understanding Game Engines & their Visualisation Logic by creating my own using 
 ![Week_6_Showcase](https://github.com/user-attachments/assets/bc8806a2-ea56-4876-8d1e-ae6dbfc6fd4b)
 - Created a Culling System; An Optimization to the Rendering Pipeline that works by Avoiding Drawing Geometry that is not Visible to the Camera, done through Normal and Cross Product Calculations.
 - Added a UI Element as well, to allow for the Culling Updates to be Shown Without Needing to Restart the Program.
+
+## Weeks 7 & 8 - Let There Be Light!
+
+![Week_7-8_PointLights](https://github.com/user-attachments/assets/c29e30db-57c6-4d43-93f5-eca5d48b9f81)
+- Added Lighting Support to Pix: Through a singleton class, we adjust properties that are specified as color values for different light components including
+ambient, diffuse, and specular to create dervied classes from a virtual function; namley Directional Light, Point Light & Spot Light!
+- Furthermore, Calculated and implemented Flat, Phong & Gouraud Shading modes using thier respective algorithms!
+
+## Weeks 9 - Textures!
+
+![Week_9_Texturing](https://github.com/user-attachments/assets/796ff61a-bfb9-4bba-b23f-c49cfa2ef65d)
+- Added Texturing Support to Pix: Through Texture Casheing & by making it so that textures are equal to colours that are mathematically mapped to a UV coordinate system (Affine Texture Mapping) we allow models/ planes to render a texture.
+- We also implement Perspective Correct Texturing; where despite an objects perspective to the camera, the textures are mapped correctly through 1/color.z interpolation.
+- Finally, Address Modes and Bilinear Sampling have also been implemented allowing for the textures to be represented in various ways and look pretty too!
