@@ -37,7 +37,7 @@ SetTexture(../Images/crate.bmp)
 SetCorrectUV($correctUV)
 SetUseFilter($useFilter)
 
-PostProcessingSetEffectType(blur)
+PostProcessingSetEffectType(wave)
 
 BeginDraw(triangle, true)
 PostProcessingBeginDraw()
@@ -92,4 +92,11 @@ Vertex(1, -1, 1, 1, 1, -1)
 
 EndDraw()
 PostProcessingEndDraw()
+
+
+
+
+
+
+
 
