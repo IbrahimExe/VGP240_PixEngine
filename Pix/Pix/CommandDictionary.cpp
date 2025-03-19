@@ -33,6 +33,8 @@
 
 #include "CmdPostProcessing.h"
 
+#include "CmdRayTracer.h"
+
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
@@ -107,6 +109,12 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdPostProcessingBeginDraw>();
 	RegisterCommand<CmdPostProcessingEndDraw>();
 	RegisterCommand<CmdPostProcessingSetEffectType>();
+
+	// Ray Tracing Commands
+	RegisterCommand<CmdBeginRayTracing>();
+	RegisterCommand<CmdEndRayTracing>();
+	RegisterCommand<CmdRTSphere>();
+	RegisterCommand<CmdRTLight>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
